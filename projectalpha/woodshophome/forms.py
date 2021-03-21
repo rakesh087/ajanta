@@ -28,3 +28,6 @@ class OrderStatus(forms.Form):
     order_number=forms.CharField(label='Order number')
     order_status=forms.CharField(label='Order Status')
     ordered_date=forms.DateField()
+
+class ProductSearch(forms.Form):
+    product_name=forms.CharField(widget=forms.TextInput(attrs={'placeholder': 'Name'}))

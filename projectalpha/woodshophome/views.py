@@ -4,7 +4,7 @@ from django.contrib.auth import authenticate, login, logout
 from django.contrib.auth.decorators import login_required
 from django.contrib import messages
 from . models import Account, Stock, Order
-from .forms import ForgotPassword, CapturePassword, Register, GetOrder, OrderStatus
+from .forms import ForgotPassword, CapturePassword, Register, GetOrder, OrderStatus, ProductSearch
 from django.contrib.auth.models import User
 from django.contrib import messages
 from django.http import HttpResponse, HttpResponseRedirect
@@ -112,9 +112,6 @@ def signup(request):
     if request.method=='POST':
         fm=Register(request.POST)
         data=request.POST
-        #email=data['email']
-        #username=data['username']
-        #mobile_number=data['mobile_number']
         print('-----------------validating form-----------------')
         if fm.is_valid():
             print('forms is valid')
@@ -230,5 +227,16 @@ def order_status_details(request,id):
 
 #this is for home page
 def home(request):
-    #return HttpResponse('hellow to my home')
-    return render(request,'woodshophome/products.html')
+    if request.method=="POST":
+        #the the form data
+        print('trying to get data from form')
+        data=request.POST['product_name']
+        print('product name is: ',data)
+        fm=ProductSearch(request.POST)
+        form={'form':fm}
+        return render(request,'woodshophome/products.html',form)
+        pass
+    else:
+        fm=ProductSearch(request.POST)
+        form={'form':fm}
+        return render(request,'woodshophome/products.html',form)

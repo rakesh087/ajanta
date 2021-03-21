@@ -69,3 +69,12 @@ class Stock(models.Model):
     in_stock=models.BooleanField()
     available_quantity=models.BigIntegerField()
     unit_of_measure=models.CharField(max_length=200)
+
+class Procucts(models.Model):
+    product_id=models.CharField(max_length=20)
+    product_name=models.CharField(max_length=50)
+    product_brand=models.CharField(max_length=50)
+    product_model=models.CharField(max_length=50)
+    product_description=models.CharField(max_length=100)
+    product_rating=models.FloatField()
+
