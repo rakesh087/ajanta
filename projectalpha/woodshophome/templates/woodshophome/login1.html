@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+          margin: 0;
+          font-family: Arial, Helvetica, sans-serif;
+        }
+       
+        .loginformer {   
+            padding: 25px;   
+            background-color: lightblue;  
+        }         
+        .topnav {
+          overflow: hidden;
+          background-color: #333;
+        }
+        
+        .topnav a {
+          float: right;
+          color: #f2f2f2;
+          text-align: center;
+          padding: 14px 16px;
+          text-decoration: none;
+          font-size: 17px;
+        }
+        
+        .topnav a:hover {
+          background-color: #ddd;
+          color: black;
+        }
+        
+      
+        .main{
+          background-color: blueviolet;
+          margin-bottom: 0px;
+          height: 1000px;
+          margin-top: 0px;
+        }
+        .formbox{
+            background-color: brown;
+            margin-left: 20%;
+            margin-right: 20%;
+            margin-bottom: 20px;
+            opacity: 80%;
+        }
+    </style>
+</head>
+<body>
+    <div class="topnav" id="myTopnav">
+        <a class="active" href="#home">Home</a>
+        <a href="#Our Services">About</a>
+        <a href="#contact">Contact</a>
+        {% if user.is_authenticated %}
+            <a href="{% url 'woodshophome:logout' %}">Logout</a>
+        {% else %}
+        <a href="{% url 'woodshophome:login' %}">Login</a>
+        {% endif %}
+    </div>
+    <div class="main" id="mainid">
+        <div class="formbox" id="formboxid">
+            <table>
+                <form action="" method="POST">
+                    {% csrf_token %}
+                    <div class="loginerror" id="loginerrorid"> 
+                        {% if form.non_field_errors %}
+                        {% for each in form.non_field_errors %}
+                            {{ each }}
+                        {% endfor %}
+                        {% endif %}
+                    </div>
+                    <div class="loginform" id="loginformid">
+                        {% for fm in form %}
+                            <label >{{ fm.label_tag }}</label>
+                            {{ fm }}{{ fm.errors|striptags }}<br>
+                        {% endfor %}
+                    </div>
+                    <button><input type="submit" value="Login"></button><br>
+                    <button><a href="{% url 'woodshophome:forgot_password' %}">Forgot Password</a></button> &nbsp;
+                    <button><a href="{% url 'woodshophome:signup' %}">SignUp</a></button>
+                </form>
+            </table>
+        </div>
+    </div>
+</body>
+</html>

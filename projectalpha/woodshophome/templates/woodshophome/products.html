@@ -1,0 +1,225 @@
+{% extends 'woodshophome/base.html' %}
+{% load static %}
+
+{% block jumbo %}  
+<div class="jumbotron bg-info m-1" style="height: 300;">
+    <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
+      <div class="carousel-inner m-1">
+        <div class="carousel-item active m-1">
+          <!--this is first image-->
+          <div class="card-deck m-0">
+            <div class="card">
+              <img class="card-img-top m-0 p-0"  src="{% static 'woodshophome/images/mahua.jpeg' 8 %}" alt="Card image cap" >
+              <div class="card-body m-0 p-0">
+                <h5 class="card-title m-0 p-0">Card title</h5>
+                <p class="card-text  m-0 p-0">This card has supporting.</p>
+                <button class="btn m-0 p-0 pull-right bg-primary cat">Add to Cart</button>
+                <a class="btn btn-primary bg-primary m-1 p-1 pull-right" href="#">More</a>
+              </div>
+            </div>
+            <div class="card m-0 p-0" >
+              <img class="card-img-top m-0" src="{% static 'woodshophome/images/plank.PNG' 9 %}" alt="Card image cap">
+              <div class="card-body  m-0 p-0">
+                <h5 class="card-title m-0 p-0">Card title</h5>
+                <p class="card-text  m-0 p-0">This card has supporting.</p>
+                <button class="btn m-0 p-0 pull-right bg-primary">Add to Cart</button>
+                <a class="btn btn-primary bg-primary m-0 p-0 pull-right">More</a>
+              </div>
+            </div>
+            <div class="card m-0 p-0">
+              <img class="card-img-top m-0" src="{% static 'woodshophome/images/teak.jpg' 0 %}" alt="Card image cap">
+              <div class="card-body  m-0 p-0">
+                <h5 class="card-title m-0 p-0">Card title</h5>
+                <p class="card-text  m-0 p-0">This card has supporting.</p>
+                <button class="btn m-0 p-0 pull-right bg-primary">Add to Cart</button>
+                <a class="btn btn-primary bg-primary m-0 p-0 pull-left" >More</a>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="carousel-item">
+          
+          <div class="card-deck m-0">
+            <div class="card">
+              <img class="card-img-top m-0 p-0"  src="{% static 'woodshophome/images/mahua.jpeg' 8 %}" alt="Card image cap" >
+              <div class="card-body m-0 p-0">
+                <h5 class="card-title m-0 p-0">Card title</h5>
+                <p class="card-text  m-0 p-0">This card has supporting.</p>
+                <button class="btn m-0 p-0 pull-right bg-primary ">Add to Cart</button>
+                <a class="btn btn-primary bg-primary m-0 p-0 pull-right">More</a>
+              </div>
+            </div>
+            <div class="card m-0 p-0" >
+              <img class="card-img-top m-0" src="{% static 'woodshophome/images/plank.PNG' 9 %}" alt="Card image cap">
+              <div class="card-body  m-0 p-0">
+                <h5 class="card-title m-0 p-0">Card title</h5>
+                <p class="card-text  m-0 p-0">This card has supporting.</p>
+                <button class="btn m-0 p-0 pull-right bg-primary ">Add to Cart</button>
+                <a class="btn btn-primary bg-primary m-0 p-0 pull-right">More</a>
+              </div>
+            </div>
+            <div class="card m-0 p-0">
+              <img class="card-img-top m-0" src="{% static 'woodshophome/images/teak.jpg' 9 %}" alt="Card image cap">
+              <div class="card-body  m-0 p-0">
+                <h5 class="card-title m-0 p-0">Card title</h5>
+                <p class="card-text  m-0 p-0">This card has supporting.</p>
+                <button class="btn m-0 p-0 pull-right bg-primary ">Add to Cart</button>
+                <a class="btn btn-primary bg-primary m-0 p-0 pull-left">More</a>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="carousel-item">
+          <!--this is third image-->
+          <div class="card-deck m-0">
+            <div class="card">
+              <img class="card-img-top m-0 p-0"  src="{% static 'woodshophome/images/teak.jpg' 9 %}" alt="Card image cap" >
+              <div class="card-body m-0 p-0">
+                <h5 class="card-title m-0 p-0">Card title</h5>
+                <p class="card-text  m-0 p-0">This card has supporting.</p>
+                <button class="btn m-0 p-0 pull-right bg-primary ">Add to Cart</button>
+                <a class="btn btn-primary bg-primary m-0 p-0 pull-right">More</a>
+              </div>
+            </div>
+            <div class="card m-0 p-0" >
+              <img class="card-img-top m-0" src="{% static 'woodshophome/images/teak.jpg' 9 %}" alt="Card image cap">
+              <div class="card-body  m-0 p-0">
+                <h5 class="card-title m-0 p-0">Card title</h5>
+                <p class="card-text  m-0 p-0">This card has supporting.</p>
+                <button class="btn m-0 p-0 pull-right bg-primary ">Add to Cart</button>
+                <a class="btn btn-primary bg-primary m-0 p-0 pull-right">More</a>
+              </div>
+            </div>
+            <div class="card m-0 p-0">
+              <img class="card-img-top m-0" src="{% static 'woodshophome/images/teak.jpg' 9 %}" alt="Card image cap">
+              <div class="card-body  m-0 p-0">
+                <h5 class="card-title m-0 p-0">Card title</h5>
+                <p class="card-text  m-0 p-0">This card has supporting.</p>
+                <button class="btn m-0 p-0 pull-right bg-primary ">Add to Cart</button>
+                <button class="btn btn-primary bg-primary m-0 p-0">More</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev" >
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="sr-only">Previous</span>
+      </a>
+      <a class="carousel-control-next" href="#carouselExampleControls" role="button" data-slide="next">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="sr-only">Next</span>
+      </a>
+    </div>
+  </div>
+
+  <div class="jumbotron bg-danger m-1">
+    <div id="carouselExampleControls1" class="carousel slide" data-ride="carousel">
+      <div class="carousel-inner">
+        <div class="carousel-item active">
+          <div class="card-deck m-1">
+            <div class="card">
+              <img class="card-img-top" src="{% static 'woodshophome/images/teak.jpg' 9 %}" alt="Card image cap">
+              <div class="card-body m-0 p-0">
+                <h5 class="card-title m-0 p-0">Card title</h5>
+                <p class="card-text m-0 p-0">This card has supporting.</p>
+                <button class="btn m-0 p-0 pull-right bg-primary ">Add to Cart</button>
+                <button class="btn btn-primary bg-primary m-0 p-0">More</button>
+              </div>
+            </div>
+            <div class="card">
+              <img class="card-img-top" src="{% static 'woodshophome/images/teak.jpg' 9 %}" alt="Card image cap">
+              <div class="card-body m-0 p-0">
+                <h5 class="card-title m-0 p-0">Card title</h5>
+                <p class="card-text m-0 p-0">This card has supporting</p>
+                <button class="btn m-0 p-0 pull-right bg-primary ">Add to Cart</button>
+                <button class="btn btn-primary bg-primary m-0 p-0">More</button>
+              </div>
+            </div>
+            <div class="card">
+              <img class="card-img-top" src="{% static 'woodshophome/images/teak.jpg' 9 %}" alt="Card image cap">
+              <div class="card-body m-0 p-0">
+                <h5 class="card-title m-0 p-0">Card title</h5>
+                <p class="card-text m-0 p-0">This card has supporting</p>
+                <button class="btn m-0 p-0 pull-right bg-primary ">Add to Cart</button>
+                <button class="btn btn-primary bg-primary m-0 p-0">More</button>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="carousel-item">
+          <div class="card-deck m-1">
+            <div class="card">
+              <img class="card-img-top" src="{% static 'woodshophome/images/teak.jpg' 9 %}" alt="Card image cap">
+              <div class="card-body m-0 p-0">
+                <h5 class="card-title m-0 p-0">Card title</h5>
+                <p class="card-text m-0 p-0">This card has supporting.</p>
+                <button class="btn m-0 p-0 pull-right bg-primary ">Add to Cart</button>
+                <button class="btn btn-primary bg-primary m-0 p-0">More</button>
+              </div>
+            </div>
+            <div class="card">
+              <img class="card-img-top" src="{% static 'woodshophome/images/teak.jpg' 9 %}" alt="Card image cap">
+              <div class="card-body m-0 p-0">
+                <h5 class="card-title m-0 p-0">Card title</h5>
+                <p class="card-text m-0 p-0">This card has supporting.</p>
+                <button class="btn m-0 p-0 pull-right bg-primary ">Add to Cart</button>
+                <button class="btn btn-primary bg-primary m-0 p-0">More</button>
+              </div>
+            </div>
+            <div class="card m-0">
+              <img class="card-img-top" src="{% static 'woodshophome/images/teak.jpg' 9 %}" alt="Card image cap">
+              <div class="card-body m-0 p-0">
+                <h5 class="card-title m-0 p-0">Card title</h5>
+                <p class="card-text m-0 p-0">This card has supporting</p>
+                <button class="btn m-0 p-0 pull-right bg-primary ">Add to Cart</button>
+                <button class="btn btn-primary bg-primary m-0 p-0">More</button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+
+        <div class="carousel-item">
+          <div class="card-deck m-1">
+            <div class="card">
+              <img class="card-img-top" src="{% static 'woodshophome/images/teak.jpg' 9 %}" alt="Card image cap">
+              <div class="card-body m-0 p-0">
+                <h5 class="card-title m-0 p-0">Card title</h5>
+                <p class="card-text m-0 p-0">This card has supporting</p>
+                <button class="btn m-0 p-0 pull-right bg-primary ">Add to Cart</button>
+                <button class="btn btn-primary bg-primary m-0 p-0">More</button>
+              </div>
+            </div>
+            <div class="card">
+              <img class="card-img-top" src="{% static 'woodshophome/images/teak.jpg' 9 %}" alt="Card image cap">
+              <div class="card-body m-0 p-0">
+                <h5 class="card-title m-0 p-0">Card title</h5>
+                <p class="card-text m-0 p-0">This card has supporting.</p>
+                <button class="btn m-0 p-0 pull-right bg-primary ">Add to Cart</button>
+                <button class="btn btn-primary bg-primary m-0 p-0">More</button>
+              </div>
+            </div>
+            <div class="card">
+              <img class="card-img-top" src="{% static 'woodshophome/images/teak.jpg' 9 %}" alt="Card image cap">
+              <div class="card-body m-0 p-0">
+                <h5 class="card-title m-0 p-0">Card title</h5>
+                <p class="card-text">This card has supporting</p>
+                <button class="btn m-0 p-0 pull-right bg-primary ">Add to Cart</button>
+                <button class="btn btn-primary bg-primary m-0 p-0">More</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <a class="carousel-control-prev" href="#carouselExampleControls1" role="button bg-primary" data-slide="prev">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="sr-only">Previous</span>
+      </a>
+      <a class="carousel-control-next" href="#carouselExampleControls1" role="button" data-slide="next">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="sr-only">Next</span>
+      </a>
+    </div>
+  </div>
+{% endblock %}
