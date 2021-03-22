@@ -239,9 +239,9 @@ def home(request):
             print(qs)
         fm=ProductSearch(request.POST)
         form={'form':fm}
-        return render(request,'woodshophome/products.html',form)
+        return render(request,'woodshophome/show_products.html',form)
         pass
     else:
         fm=ProductSearch(request.POST)
         form={'form':fm}
-        return render(request,'woodshophome/products.html',form)
+        return render(request,'woodshophome/home.html',form)
