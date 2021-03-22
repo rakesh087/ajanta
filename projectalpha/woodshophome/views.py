@@ -3,7 +3,7 @@ from django.contrib.auth.forms import AuthenticationForm
 from django.contrib.auth import authenticate, login, logout
 from django.contrib.auth.decorators import login_required
 from django.contrib import messages
-from . models import Account, Stock, Order
+from . models import Account, Stock, Order, Procucts
 from .forms import ForgotPassword, CapturePassword, Register, GetOrder, OrderStatus, ProductSearch
 from django.contrib.auth.models import User
 from django.contrib import messages
@@ -232,6 +232,11 @@ def home(request):
         print('trying to get data from form')
         data=request.POST['product_name']
         print('product name is: ',data)
+        qs=Procucts.objects.all().filter(product_name__icontains=data)
+        if len(qs)==0:
+            print('Opps no data found')
+        else:
+            print(qs)
         fm=ProductSearch(request.POST)
         form={'form':fm}
         return render(request,'woodshophome/products.html',form)
