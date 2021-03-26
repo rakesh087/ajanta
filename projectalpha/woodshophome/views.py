@@ -230,17 +230,23 @@ def home(request):
     if request.method=="POST":
         #the the form data
         print('trying to get data from form')
-        data=request.POST['product_name']
-        print('product name is: ',data)
-        qs=Procucts.objects.all().filter(product_name__icontains=data)
+        product_name=request.POST['product_name']
+        print('product name is: ',product_name)
+        qs=Procucts.objects.all().filter(product_name__icontains=product_name)
         if len(qs)==0:
             print('Opps no data found')
+            fm=ProductSearch(request.POST)
+            form={'form':fm}
+            return render(request,'woodshophome/show_products.html',form)
         else:
-            print(qs)
-        fm=ProductSearch(request.POST)
-        form={'form':fm}
-        return render(request,'woodshophome/show_products.html',form)
-        pass
+            prod={}
+            for each in qs:
+                print(each.product_id,each.product_name, each.prduct_img_path,each.product_brand)
+                prod[each.product_id]=[each.product_name,each.prduct_img_path,each.product_brand,
+                each.product_description,each.product_model]
+            fm=ProductSearch(request.POST)
+            form={'form':fm,'prod':prod}
+            return render(request,'woodshophome/show_products.html',form)
     else:
         fm=ProductSearch(request.POST)
         form={'form':fm}

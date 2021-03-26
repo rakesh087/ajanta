@@ -77,4 +77,5 @@ class Procucts(models.Model):
     product_model=models.CharField(max_length=50)
     product_description=models.CharField(max_length=100)
     product_rating=models.FloatField()
+    prduct_img_path=models.CharField(max_length=1000,default='not_available')
 
