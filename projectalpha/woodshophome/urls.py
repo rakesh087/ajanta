@@ -11,5 +11,6 @@ urlpatterns = [
     path('placeorder/',views.place_order,name='place_order'),
     path('',views.home,name='woodshophome-home'),
     path('checkstatus/',views.order_status,name='woodshophome-order_status'),
+    path('show_prod_details/<int:id>',views.show_selected_prod,name='woodshophome-show_selected_prod'),
     path('checkstatus/<int:id>',views.order_status_details,name='woodshophome-orderorder_status_details_status'),
 ]

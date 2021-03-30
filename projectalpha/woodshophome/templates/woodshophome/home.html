@@ -1,5 +1,16 @@
-{% extends 'woodshophome/base.html' %}
+{% extends 'woodshophome/base1.html' %}
 {% load static %}
+
+{% block form_block %}
+<form class="form-inline my-2 my-lg-0 " action="{% url 'woodshophome:woodshophome-home' %}" method="POST">
+    {% csrf_token %}
+    {% for fm in form %}
+        <span >{{ fm }}</span>
+        <!-- <input class="form-control mr-sm-2 ml-5 " type="search" placeholder="Search" aria-label="Search" id="product_name"> -->
+    {% endfor %}
+    <!-- <input class="form-control mr-sm-2 ml-5 " type="search" placeholder="Search" aria-label="Search" id="product_name"> -->
+    <button class="btn btn-outline-success my-2 my-sm-0 btn-success " type="submit">Search</button>
+{% endblock %}
 
 {% block jumbo %}  
 <div class="jumbotron bg-danger m-1 p-1">

@@ -241,9 +241,9 @@ def home(request):
         else:
             prod={}
             for each in qs:
-                print(each.product_id,each.product_name, each.prduct_img_path,each.product_brand)
-                prod[each.product_id]=[each.product_name,each.prduct_img_path,each.product_brand,
-                each.product_description,each.product_model]
+                print(each.product_id,each.product_name, each.prduct_img_path,each.product_brand,each.pk)
+                #will create a dictionary based on product_id, each key(product-id) will have all details for that products
+                prod[each.product_id]=[each.product_name,each.prduct_img_path,each.product_brand,each.product_description,each.product_model,each.pk]
             fm=ProductSearch(request.POST)
             form={'form':fm,'prod':prod}
             return render(request,'woodshophome/show_products.html',form)
@@ -251,3 +251,23 @@ def home(request):
         fm=ProductSearch(request.POST)
         form={'form':fm}
         return render(request,'woodshophome/home.html',form)
+
+def show_selected_prod(request,id,*args):
+    if request.method=="POST":
+        print('this is for seacrhing products')
+
+    else:
+        print('this is for displaying form')
+        qs=Procucts.objects.get(id=id)
+        prod={}
+        print('got queryset is: ',qs)
+        print(qs.product_id)
+        print(qs.product_name)
+        prod[qs.product_id]=[qs.product_name,qs.prduct_img_path,qs.product_brand,qs.product_description,qs.product_model]
+        # for each in qs:
+        #     print(each.product_id,each.product_name, each.prduct_img_path,each.product_brand,each.pk)
+        #     #will create a dictionary based on product_id, each key(product-id) will have all details for that products
+        #     prod[each.product_id]=[each.product_name,each.prduct_img_path,each.product_brand,each.product_description,each.product_model,each.pk]
+        fm=ProductSearch(request.POST)
+        form={'form':fm,'prod':prod}
+        return render(request,'woodshophome/show_selected_prod_detail.html',form)
