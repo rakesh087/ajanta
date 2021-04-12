@@ -3,7 +3,7 @@ from django.contrib.auth.forms import AuthenticationForm
 from django.contrib.auth import authenticate, login, logout
 from django.contrib.auth.decorators import login_required
 from django.contrib import messages
-from . models import Account, Stock, Order, Procucts
+from . models import Account, Stock, Order, Procucts, ProdductPrice
 from .forms import ForgotPassword, CapturePassword, Register, GetOrder, OrderStatus, ProductSearch
 from django.contrib.auth.models import User
 from django.contrib import messages
@@ -243,31 +243,28 @@ def home(request):
             for each in qs:
                 print(each.product_id,each.product_name, each.prduct_img_path,each.product_brand,each.pk)
                 #will create a dictionary based on product_id, each key(product-id) will have all details for that products
-                prod[each.product_id]=[each.product_name,each.prduct_img_path,each.product_brand,each.product_description,each.product_model,each.pk]
+                prod[each.product_id]=[each.product_name,each.prduct_img_path,each.product_brand,each.product_description,each.product_id,each.product_model]
             fm=ProductSearch(request.POST)
             form={'form':fm,'prod':prod}
             return render(request,'woodshophome/show_products.html',form)
     else:
         fm=ProductSearch(request.POST)
         form={'form':fm}
-        return render(request,'woodshophome/home.html',form)
+        return render(request,'woodshophome/home1.html',form)
 
-def show_selected_prod(request,id,*args):
+def show_selected_prod(request,prod_num,*args):
     if request.method=="POST":
         print('this is for seacrhing products')
-
     else:
+        print('produc id in show_selected_prod is: ',prod_num)
         print('this is for displaying form')
-        qs=Procucts.objects.get(id=id)
+        qs=Procucts.objects.get(product_id=prod_num)
         prod={}
         print('got queryset is: ',qs)
         print(qs.product_id)
         print(qs.product_name)
         prod[qs.product_id]=[qs.product_name,qs.prduct_img_path,qs.product_brand,qs.product_description,qs.product_model]
-        # for each in qs:
-        #     print(each.product_id,each.product_name, each.prduct_img_path,each.product_brand,each.pk)
-        #     #will create a dictionary based on product_id, each key(product-id) will have all details for that products
-        #     prod[each.product_id]=[each.product_name,each.prduct_img_path,each.product_brand,each.product_description,each.product_model,each.pk]
+        #prod[each.product_id]=[each.product_name,each.prduct_img_path,each.product_brand,each.product_description,each.product_model,each.pk]
         fm=ProductSearch(request.POST)
         form={'form':fm,'prod':prod}
         return render(request,'woodshophome/show_selected_prod_detail.html',form)

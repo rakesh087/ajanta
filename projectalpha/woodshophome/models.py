@@ -71,7 +71,7 @@ class Stock(models.Model):
     unit_of_measure=models.CharField(max_length=200)
 
 class Procucts(models.Model):
-    product_id=models.CharField(max_length=20)
+    product_id=models.CharField(max_length=20, unique=True)
     product_name=models.CharField(max_length=50)
     product_brand=models.CharField(max_length=50)
     product_model=models.CharField(max_length=50)
@@ -79,3 +79,7 @@ class Procucts(models.Model):
     product_rating=models.FloatField()
     prduct_img_path=models.CharField(max_length=1000,default='not_available')
 
+class ProdductPrice(models.Model):
+    product_id=models.ForeignKey(Procucts,on_delete=models.DO_NOTHING, default=0)
+    price=models.FloatField()
+    pricicin_unit=models.CharField(max_length=20)
